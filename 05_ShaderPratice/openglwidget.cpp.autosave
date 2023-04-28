@@ -109,6 +109,7 @@ void openGLWidget::paintGL()
 
     m_uvOffset.setX(0.25f);
     m_uvOffset.setY(0.25f);
+    
 
     m_uvOffset.setX(m_uvOffset.x()+0.01f);
     m_uvOffset.setY(m_uvOffset.y()+0.01f);
