@@ -33,7 +33,10 @@ SUBTARGETS    =  \
 		sub-01_Triangles \
 		sub-02_Texture \
 		sub-03_CoordSystem \
-		sub-04_3DItem
+		sub-04_3DItem \
+		sub-05_ShaderPratice \
+		sub-06_Camera \
+		sub-07_SkyBox
 
 
 sub-01_Triangles-qmake_all:  FORCE
@@ -136,6 +139,81 @@ sub-04_3DItem-install_subtargets: FORCE
 sub-04_3DItem-uninstall_subtargets: FORCE
 	@test -d 04_3DItem/ || mkdir -p 04_3DItem/
 	cd 04_3DItem/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/detc/work/learnopengl/04_3DItem/04_3DItem.pro -spec linux-g++ CONFIG+=debug CONFIG+=qml_debug ) && $(MAKE) -f Makefile uninstall
+sub-05_ShaderPratice-qmake_all:  FORCE
+	@test -d 05_ShaderPratice/ || mkdir -p 05_ShaderPratice/
+	cd 05_ShaderPratice/ && $(QMAKE) -o Makefile /home/detc/work/learnopengl/05_ShaderPratice/05_ShaderPratice.pro -spec linux-g++ CONFIG+=debug CONFIG+=qml_debug
+	cd 05_ShaderPratice/ && $(MAKE) -f Makefile qmake_all
+sub-05_ShaderPratice: FORCE
+	@test -d 05_ShaderPratice/ || mkdir -p 05_ShaderPratice/
+	cd 05_ShaderPratice/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/detc/work/learnopengl/05_ShaderPratice/05_ShaderPratice.pro -spec linux-g++ CONFIG+=debug CONFIG+=qml_debug ) && $(MAKE) -f Makefile
+sub-05_ShaderPratice-make_first: FORCE
+	@test -d 05_ShaderPratice/ || mkdir -p 05_ShaderPratice/
+	cd 05_ShaderPratice/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/detc/work/learnopengl/05_ShaderPratice/05_ShaderPratice.pro -spec linux-g++ CONFIG+=debug CONFIG+=qml_debug ) && $(MAKE) -f Makefile 
+sub-05_ShaderPratice-all: FORCE
+	@test -d 05_ShaderPratice/ || mkdir -p 05_ShaderPratice/
+	cd 05_ShaderPratice/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/detc/work/learnopengl/05_ShaderPratice/05_ShaderPratice.pro -spec linux-g++ CONFIG+=debug CONFIG+=qml_debug ) && $(MAKE) -f Makefile all
+sub-05_ShaderPratice-clean: FORCE
+	@test -d 05_ShaderPratice/ || mkdir -p 05_ShaderPratice/
+	cd 05_ShaderPratice/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/detc/work/learnopengl/05_ShaderPratice/05_ShaderPratice.pro -spec linux-g++ CONFIG+=debug CONFIG+=qml_debug ) && $(MAKE) -f Makefile clean
+sub-05_ShaderPratice-distclean: FORCE
+	@test -d 05_ShaderPratice/ || mkdir -p 05_ShaderPratice/
+	cd 05_ShaderPratice/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/detc/work/learnopengl/05_ShaderPratice/05_ShaderPratice.pro -spec linux-g++ CONFIG+=debug CONFIG+=qml_debug ) && $(MAKE) -f Makefile distclean
+sub-05_ShaderPratice-install_subtargets: FORCE
+	@test -d 05_ShaderPratice/ || mkdir -p 05_ShaderPratice/
+	cd 05_ShaderPratice/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/detc/work/learnopengl/05_ShaderPratice/05_ShaderPratice.pro -spec linux-g++ CONFIG+=debug CONFIG+=qml_debug ) && $(MAKE) -f Makefile install
+sub-05_ShaderPratice-uninstall_subtargets: FORCE
+	@test -d 05_ShaderPratice/ || mkdir -p 05_ShaderPratice/
+	cd 05_ShaderPratice/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/detc/work/learnopengl/05_ShaderPratice/05_ShaderPratice.pro -spec linux-g++ CONFIG+=debug CONFIG+=qml_debug ) && $(MAKE) -f Makefile uninstall
+sub-06_Camera-qmake_all:  FORCE
+	@test -d 06_Camera/ || mkdir -p 06_Camera/
+	cd 06_Camera/ && $(QMAKE) -o Makefile /home/detc/work/learnopengl/06_Camera/06_Camera.pro -spec linux-g++ CONFIG+=debug CONFIG+=qml_debug
+	cd 06_Camera/ && $(MAKE) -f Makefile qmake_all
+sub-06_Camera: FORCE
+	@test -d 06_Camera/ || mkdir -p 06_Camera/
+	cd 06_Camera/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/detc/work/learnopengl/06_Camera/06_Camera.pro -spec linux-g++ CONFIG+=debug CONFIG+=qml_debug ) && $(MAKE) -f Makefile
+sub-06_Camera-make_first: FORCE
+	@test -d 06_Camera/ || mkdir -p 06_Camera/
+	cd 06_Camera/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/detc/work/learnopengl/06_Camera/06_Camera.pro -spec linux-g++ CONFIG+=debug CONFIG+=qml_debug ) && $(MAKE) -f Makefile 
+sub-06_Camera-all: FORCE
+	@test -d 06_Camera/ || mkdir -p 06_Camera/
+	cd 06_Camera/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/detc/work/learnopengl/06_Camera/06_Camera.pro -spec linux-g++ CONFIG+=debug CONFIG+=qml_debug ) && $(MAKE) -f Makefile all
+sub-06_Camera-clean: FORCE
+	@test -d 06_Camera/ || mkdir -p 06_Camera/
+	cd 06_Camera/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/detc/work/learnopengl/06_Camera/06_Camera.pro -spec linux-g++ CONFIG+=debug CONFIG+=qml_debug ) && $(MAKE) -f Makefile clean
+sub-06_Camera-distclean: FORCE
+	@test -d 06_Camera/ || mkdir -p 06_Camera/
+	cd 06_Camera/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/detc/work/learnopengl/06_Camera/06_Camera.pro -spec linux-g++ CONFIG+=debug CONFIG+=qml_debug ) && $(MAKE) -f Makefile distclean
+sub-06_Camera-install_subtargets: FORCE
+	@test -d 06_Camera/ || mkdir -p 06_Camera/
+	cd 06_Camera/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/detc/work/learnopengl/06_Camera/06_Camera.pro -spec linux-g++ CONFIG+=debug CONFIG+=qml_debug ) && $(MAKE) -f Makefile install
+sub-06_Camera-uninstall_subtargets: FORCE
+	@test -d 06_Camera/ || mkdir -p 06_Camera/
+	cd 06_Camera/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/detc/work/learnopengl/06_Camera/06_Camera.pro -spec linux-g++ CONFIG+=debug CONFIG+=qml_debug ) && $(MAKE) -f Makefile uninstall
+sub-07_SkyBox-qmake_all:  FORCE
+	@test -d 07_SkyBox/ || mkdir -p 07_SkyBox/
+	cd 07_SkyBox/ && $(QMAKE) -o Makefile /home/detc/work/learnopengl/07_SkyBox/07_SkyBox.pro -spec linux-g++ CONFIG+=debug CONFIG+=qml_debug
+	cd 07_SkyBox/ && $(MAKE) -f Makefile qmake_all
+sub-07_SkyBox: FORCE
+	@test -d 07_SkyBox/ || mkdir -p 07_SkyBox/
+	cd 07_SkyBox/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/detc/work/learnopengl/07_SkyBox/07_SkyBox.pro -spec linux-g++ CONFIG+=debug CONFIG+=qml_debug ) && $(MAKE) -f Makefile
+sub-07_SkyBox-make_first: FORCE
+	@test -d 07_SkyBox/ || mkdir -p 07_SkyBox/
+	cd 07_SkyBox/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/detc/work/learnopengl/07_SkyBox/07_SkyBox.pro -spec linux-g++ CONFIG+=debug CONFIG+=qml_debug ) && $(MAKE) -f Makefile 
+sub-07_SkyBox-all: FORCE
+	@test -d 07_SkyBox/ || mkdir -p 07_SkyBox/
+	cd 07_SkyBox/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/detc/work/learnopengl/07_SkyBox/07_SkyBox.pro -spec linux-g++ CONFIG+=debug CONFIG+=qml_debug ) && $(MAKE) -f Makefile all
+sub-07_SkyBox-clean: FORCE
+	@test -d 07_SkyBox/ || mkdir -p 07_SkyBox/
+	cd 07_SkyBox/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/detc/work/learnopengl/07_SkyBox/07_SkyBox.pro -spec linux-g++ CONFIG+=debug CONFIG+=qml_debug ) && $(MAKE) -f Makefile clean
+sub-07_SkyBox-distclean: FORCE
+	@test -d 07_SkyBox/ || mkdir -p 07_SkyBox/
+	cd 07_SkyBox/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/detc/work/learnopengl/07_SkyBox/07_SkyBox.pro -spec linux-g++ CONFIG+=debug CONFIG+=qml_debug ) && $(MAKE) -f Makefile distclean
+sub-07_SkyBox-install_subtargets: FORCE
+	@test -d 07_SkyBox/ || mkdir -p 07_SkyBox/
+	cd 07_SkyBox/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/detc/work/learnopengl/07_SkyBox/07_SkyBox.pro -spec linux-g++ CONFIG+=debug CONFIG+=qml_debug ) && $(MAKE) -f Makefile install
+sub-07_SkyBox-uninstall_subtargets: FORCE
+	@test -d 07_SkyBox/ || mkdir -p 07_SkyBox/
+	cd 07_SkyBox/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/detc/work/learnopengl/07_SkyBox/07_SkyBox.pro -spec linux-g++ CONFIG+=debug CONFIG+=qml_debug ) && $(MAKE) -f Makefile uninstall
 
 Makefile: build.pro ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/linux-g++/qmake.conf ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/features/spec_pre.prf \
 		../../Qt5.10.1/5.10.1/gcc_64/mkspecs/common/unix.conf \
@@ -451,16 +529,16 @@ build.pro:
 qmake: FORCE
 	@$(QMAKE) -o Makefile build.pro -spec linux-g++ CONFIG+=debug CONFIG+=qml_debug
 
-qmake_all: sub-01_Triangles-qmake_all sub-02_Texture-qmake_all sub-03_CoordSystem-qmake_all sub-04_3DItem-qmake_all FORCE
+qmake_all: sub-01_Triangles-qmake_all sub-02_Texture-qmake_all sub-03_CoordSystem-qmake_all sub-04_3DItem-qmake_all sub-05_ShaderPratice-qmake_all sub-06_Camera-qmake_all sub-07_SkyBox-qmake_all FORCE
 
-make_first: sub-01_Triangles-make_first sub-02_Texture-make_first sub-03_CoordSystem-make_first sub-04_3DItem-make_first  FORCE
-all: sub-01_Triangles-all sub-02_Texture-all sub-03_CoordSystem-all sub-04_3DItem-all  FORCE
-clean: sub-01_Triangles-clean sub-02_Texture-clean sub-03_CoordSystem-clean sub-04_3DItem-clean  FORCE
-distclean: sub-01_Triangles-distclean sub-02_Texture-distclean sub-03_CoordSystem-distclean sub-04_3DItem-distclean  FORCE
+make_first: sub-01_Triangles-make_first sub-02_Texture-make_first sub-03_CoordSystem-make_first sub-04_3DItem-make_first sub-05_ShaderPratice-make_first sub-06_Camera-make_first sub-07_SkyBox-make_first  FORCE
+all: sub-01_Triangles-all sub-02_Texture-all sub-03_CoordSystem-all sub-04_3DItem-all sub-05_ShaderPratice-all sub-06_Camera-all sub-07_SkyBox-all  FORCE
+clean: sub-01_Triangles-clean sub-02_Texture-clean sub-03_CoordSystem-clean sub-04_3DItem-clean sub-05_ShaderPratice-clean sub-06_Camera-clean sub-07_SkyBox-clean  FORCE
+distclean: sub-01_Triangles-distclean sub-02_Texture-distclean sub-03_CoordSystem-distclean sub-04_3DItem-distclean sub-05_ShaderPratice-distclean sub-06_Camera-distclean sub-07_SkyBox-distclean  FORCE
 	-$(DEL_FILE) Makefile
 	-$(DEL_FILE) .qmake.stash
-install_subtargets: sub-01_Triangles-install_subtargets sub-02_Texture-install_subtargets sub-03_CoordSystem-install_subtargets sub-04_3DItem-install_subtargets FORCE
-uninstall_subtargets: sub-01_Triangles-uninstall_subtargets sub-02_Texture-uninstall_subtargets sub-03_CoordSystem-uninstall_subtargets sub-04_3DItem-uninstall_subtargets FORCE
+install_subtargets: sub-01_Triangles-install_subtargets sub-02_Texture-install_subtargets sub-03_CoordSystem-install_subtargets sub-04_3DItem-install_subtargets sub-05_ShaderPratice-install_subtargets sub-06_Camera-install_subtargets sub-07_SkyBox-install_subtargets FORCE
+uninstall_subtargets: sub-01_Triangles-uninstall_subtargets sub-02_Texture-uninstall_subtargets sub-03_CoordSystem-uninstall_subtargets sub-04_3DItem-uninstall_subtargets sub-05_ShaderPratice-uninstall_subtargets sub-06_Camera-uninstall_subtargets sub-07_SkyBox-uninstall_subtargets FORCE
 
 sub-01_Triangles-check:
 	@test -d 01_Triangles/ || mkdir -p 01_Triangles/
@@ -474,7 +552,16 @@ sub-03_CoordSystem-check:
 sub-04_3DItem-check:
 	@test -d 04_3DItem/ || mkdir -p 04_3DItem/
 	cd 04_3DItem/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/detc/work/learnopengl/04_3DItem/04_3DItem.pro -spec linux-g++ CONFIG+=debug CONFIG+=qml_debug ) && $(MAKE) -f Makefile check
-check: sub-01_Triangles-check sub-02_Texture-check sub-03_CoordSystem-check sub-04_3DItem-check
+sub-05_ShaderPratice-check:
+	@test -d 05_ShaderPratice/ || mkdir -p 05_ShaderPratice/
+	cd 05_ShaderPratice/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/detc/work/learnopengl/05_ShaderPratice/05_ShaderPratice.pro -spec linux-g++ CONFIG+=debug CONFIG+=qml_debug ) && $(MAKE) -f Makefile check
+sub-06_Camera-check:
+	@test -d 06_Camera/ || mkdir -p 06_Camera/
+	cd 06_Camera/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/detc/work/learnopengl/06_Camera/06_Camera.pro -spec linux-g++ CONFIG+=debug CONFIG+=qml_debug ) && $(MAKE) -f Makefile check
+sub-07_SkyBox-check:
+	@test -d 07_SkyBox/ || mkdir -p 07_SkyBox/
+	cd 07_SkyBox/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/detc/work/learnopengl/07_SkyBox/07_SkyBox.pro -spec linux-g++ CONFIG+=debug CONFIG+=qml_debug ) && $(MAKE) -f Makefile check
+check: sub-01_Triangles-check sub-02_Texture-check sub-03_CoordSystem-check sub-04_3DItem-check sub-05_ShaderPratice-check sub-06_Camera-check sub-07_SkyBox-check
 
 sub-01_Triangles-benchmark:
 	@test -d 01_Triangles/ || mkdir -p 01_Triangles/
@@ -488,7 +575,16 @@ sub-03_CoordSystem-benchmark:
 sub-04_3DItem-benchmark:
 	@test -d 04_3DItem/ || mkdir -p 04_3DItem/
 	cd 04_3DItem/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/detc/work/learnopengl/04_3DItem/04_3DItem.pro -spec linux-g++ CONFIG+=debug CONFIG+=qml_debug ) && $(MAKE) -f Makefile benchmark
-benchmark: sub-01_Triangles-benchmark sub-02_Texture-benchmark sub-03_CoordSystem-benchmark sub-04_3DItem-benchmark
+sub-05_ShaderPratice-benchmark:
+	@test -d 05_ShaderPratice/ || mkdir -p 05_ShaderPratice/
+	cd 05_ShaderPratice/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/detc/work/learnopengl/05_ShaderPratice/05_ShaderPratice.pro -spec linux-g++ CONFIG+=debug CONFIG+=qml_debug ) && $(MAKE) -f Makefile benchmark
+sub-06_Camera-benchmark:
+	@test -d 06_Camera/ || mkdir -p 06_Camera/
+	cd 06_Camera/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/detc/work/learnopengl/06_Camera/06_Camera.pro -spec linux-g++ CONFIG+=debug CONFIG+=qml_debug ) && $(MAKE) -f Makefile benchmark
+sub-07_SkyBox-benchmark:
+	@test -d 07_SkyBox/ || mkdir -p 07_SkyBox/
+	cd 07_SkyBox/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/detc/work/learnopengl/07_SkyBox/07_SkyBox.pro -spec linux-g++ CONFIG+=debug CONFIG+=qml_debug ) && $(MAKE) -f Makefile benchmark
+benchmark: sub-01_Triangles-benchmark sub-02_Texture-benchmark sub-03_CoordSystem-benchmark sub-04_3DItem-benchmark sub-05_ShaderPratice-benchmark sub-06_Camera-benchmark sub-07_SkyBox-benchmark
 install:install_subtargets  FORCE
 
 uninstall: uninstall_subtargets FORCE
@@ -498,7 +594,7 @@ FORCE:
 dist: distdir FORCE
 	(cd `dirname $(DISTDIR)` && $(TAR) $(DISTNAME).tar $(DISTNAME) && $(COMPRESS) $(DISTNAME).tar) && $(MOVE) `dirname $(DISTDIR)`/$(DISTNAME).tar.gz . && $(DEL_FILE) -r $(DISTDIR)
 
-distdir: sub-01_Triangles-distdir sub-02_Texture-distdir sub-03_CoordSystem-distdir sub-04_3DItem-distdir FORCE
+distdir: sub-01_Triangles-distdir sub-02_Texture-distdir sub-03_CoordSystem-distdir sub-04_3DItem-distdir sub-05_ShaderPratice-distdir sub-06_Camera-distdir sub-07_SkyBox-distdir FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/features/spec_pre.prf ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/common/unix.conf ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/common/linux.conf ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/common/sanitize.conf ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/common/gcc-base.conf ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/common/gcc-base-unix.conf ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/common/g++-base.conf ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/common/g++-unix.conf ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/qconfig.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_3danimation.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_3danimation_private.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_3dcore.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_3dcore_private.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_3dextras.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_3dextras_private.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_3dinput.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_3dinput_private.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_3dlogic.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_3dlogic_private.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_3dquick.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_3dquick_private.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_3dquickanimation.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_3dquickanimation_private.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_3dquickextras.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_3dquickextras_private.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_3dquickinput.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_3dquickinput_private.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_3dquickrender.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_3dquickrender_private.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_3dquickscene2d.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_3dquickscene2d_private.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_3drender.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_3drender_private.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_accessibility_support_private.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_bluetooth.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_bluetooth_private.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_bootstrap_private.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_concurrent.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_concurrent_private.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_core.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_core_private.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_dbus.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_dbus_private.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_designer.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_designer_private.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_designercomponents_private.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_devicediscovery_support_private.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_edid_support_private.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_egl_support_private.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_eglfs_kms_support_private.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_eglfsdeviceintegration_private.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_eventdispatcher_support_private.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_fb_support_private.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_fontdatabase_support_private.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_gamepad.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_gamepad_private.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_glx_support_private.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_gui.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_gui_private.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_help.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_help_private.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_input_support_private.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_kms_support_private.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_linuxaccessibility_support_private.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_location.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_location_private.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_multimedia.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_multimedia_private.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_multimediagsttools_private.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_multimediawidgets.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_multimediawidgets_private.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_network.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_network_private.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_nfc.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_nfc_private.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_opengl.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_opengl_private.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_openglextensions.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_openglextensions_private.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_packetprotocol_private.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_platformcompositor_support_private.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_positioning.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_positioning_private.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_printsupport.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_printsupport_private.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_qml.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_qml_private.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_qmldebug_private.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_qmldevtools_private.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_qmltest.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_qmltest_private.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_qtmultimediaquicktools_private.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_quick.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_quick_private.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_quickcontrols2.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_quickcontrols2_private.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_quickparticles_private.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_quicktemplates2_private.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_quickwidgets.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_quickwidgets_private.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_scxml.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_scxml_private.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_sensors.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_sensors_private.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_serialbus.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_serialbus_private.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_serialport.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_serialport_private.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_service_support_private.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_sql.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_sql_private.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_svg.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_svg_private.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_testlib.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_testlib_private.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_texttospeech.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_texttospeech_private.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_theme_support_private.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_uiplugin.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_uitools.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_uitools_private.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_webchannel.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_webchannel_private.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_websockets.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_websockets_private.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_webview.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_webview_private.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_widgets.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_widgets_private.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_x11extras.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_x11extras_private.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_xcb_qpa_lib_private.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_xml.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_xml_private.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_xmlpatterns.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/modules/qt_lib_xmlpatterns_private.pri ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/features/qt_functions.prf ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/features/qt_config.prf ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/linux-g++/qmake.conf ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/features/spec_post.prf .qmake.stash ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/features/exclusive_builds.prf ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/features/toolchain.prf ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/features/default_pre.prf ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/features/resolve_config.prf ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/features/default_post.prf ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/features/qml_debug.prf ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/features/warn_on.prf ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/features/qmake_use.prf ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/features/file_copies.prf ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/features/testcase_targets.prf ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/features/exceptions.prf ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/features/yacc.prf ../../Qt5.10.1/5.10.1/gcc_64/mkspecs/features/lex.prf build.pro $(DISTDIR)/
 
@@ -517,4 +613,16 @@ sub-03_CoordSystem-distdir: FORCE
 sub-04_3DItem-distdir: FORCE
 	@test -d 04_3DItem/ || mkdir -p 04_3DItem/
 	cd 04_3DItem/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/detc/work/learnopengl/04_3DItem/04_3DItem.pro -spec linux-g++ CONFIG+=debug CONFIG+=qml_debug ) && $(MAKE) -e -f Makefile distdir DISTDIR=$(DISTDIR)/04_3DItem
+
+sub-05_ShaderPratice-distdir: FORCE
+	@test -d 05_ShaderPratice/ || mkdir -p 05_ShaderPratice/
+	cd 05_ShaderPratice/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/detc/work/learnopengl/05_ShaderPratice/05_ShaderPratice.pro -spec linux-g++ CONFIG+=debug CONFIG+=qml_debug ) && $(MAKE) -e -f Makefile distdir DISTDIR=$(DISTDIR)/05_ShaderPratice
+
+sub-06_Camera-distdir: FORCE
+	@test -d 06_Camera/ || mkdir -p 06_Camera/
+	cd 06_Camera/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/detc/work/learnopengl/06_Camera/06_Camera.pro -spec linux-g++ CONFIG+=debug CONFIG+=qml_debug ) && $(MAKE) -e -f Makefile distdir DISTDIR=$(DISTDIR)/06_Camera
+
+sub-07_SkyBox-distdir: FORCE
+	@test -d 07_SkyBox/ || mkdir -p 07_SkyBox/
+	cd 07_SkyBox/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/detc/work/learnopengl/07_SkyBox/07_SkyBox.pro -spec linux-g++ CONFIG+=debug CONFIG+=qml_debug ) && $(MAKE) -e -f Makefile distdir DISTDIR=$(DISTDIR)/07_SkyBox
 
