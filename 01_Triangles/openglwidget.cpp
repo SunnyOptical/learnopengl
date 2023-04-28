@@ -30,6 +30,7 @@ void openGLWidget::initializeGL()
    if(!result){
        qDebug()<<m_program.log()<<endl;
    }
+    //create vao buffer
    m_vao.create();
    m_vao.bind();
 
@@ -39,12 +40,12 @@ void openGLWidget::initializeGL()
        0.0f,0.5f,0.0f,      0.0f,1.0f,0.0f,
        0.5f,-0.5f,0.0f,     0.0f,0.0f,1.0f
    };
-
-
+   //create vbo buffer and bind data
    m_vbo.create();
    m_vbo.bind();
    m_vbo.allocate(vertex,sizeof(vertex));
 
+   //operate shader
    GLuint vertexLocation = m_program.attributeLocation("qt_Vertex");
    m_program.setAttributeBuffer(vertexLocation,GL_FLOAT,0,3,6*sizeof(GLfloat));
    m_program.enableAttributeArray(vertexLocation);
@@ -53,8 +54,9 @@ void openGLWidget::initializeGL()
    m_program.setAttributeBuffer(colorLocation,GL_FLOAT,3*sizeof(GLfloat),3,6*sizeof(GLfloat));
    m_program.enableAttributeArray(colorLocation);
 
-
+   //after operate we should enable attribute
    m_vao.release();
+
 }
 /**
  * @brief openGLWidget::paintGL 发生变化或手动调用repaint和update时调用
