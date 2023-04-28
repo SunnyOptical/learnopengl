@@ -1,7 +1,9 @@
 #include "openglwidget.h"
 #include <QDebug>
+#include <QImage>
 openGLWidget::openGLWidget()
-    :m_vbo(QOpenGLBuffer::VertexBuffer)
+    :m_vbo(QOpenGLBuffer::VertexBuffer),
+     m_texture(QOpenGLTexture::Target2D)
 {
     resize(800,480);
 
@@ -35,24 +37,33 @@ void openGLWidget::initializeGL()
    m_vao.bind();
 
    GLfloat vertex[]={
-       //vertex             //color
-       -0.5f,-0.5f,0.0f,   1.0f,0.0f,0.0f,
-       0.0f,0.5f,0.0f,      0.0f,1.0f,0.0f,
-       0.5f,-0.5f,0.0f,     0.0f,0.0f,1.0f
+       //vertex         //uv
+    -0.5f,-0.5f,0.0f,   0.0f,0.0f,
+    0.5f,-0.5f,0.0f,    1.0f,0.0f,
+    0.5f,0.5f,0.0f,     1.0f,1.0f,
+    -0.5f,0.5f,0.0f,    0.0f,1.0f
    };
    //create vbo buffer and bind data
    m_vbo.create();
    m_vbo.bind();
    m_vbo.allocate(vertex,sizeof(vertex));
 
-   //operate shader
-   GLuint vertexLocation = m_program.attributeLocation("qt_Vertex");
-   m_program.setAttributeBuffer(vertexLocation,GL_FLOAT,0,3,6*sizeof(GLfloat));
-   m_program.enableAttributeArray(vertexLocation);
+   //create texture buffer and bind data
+    m_texture.create();
+    m_texture.bind();
+    m_texture.setData(QImage("./container").mirrored());
+    m_texture.setWrapMode(QOpenGLTexture::DirectionS,QOpenGLTexture::Repeat);
+    m_texture.setWrapMode(QOpenGLTexture::DirectionT,QOpenGLTexture::Repeat);
+    m_texture.setMagnificationFilter(QOpenGLTexture::Nearest);
+    m_texture.setMinificationFilter(QOpenGLTexture::Linear);
 
-   GLuint colorLocation = m_program.attributeLocation("qt_Color");
-   m_program.setAttributeBuffer(colorLocation,GL_FLOAT,3*sizeof(GLfloat),3,6*sizeof(GLfloat));
-   m_program.enableAttributeArray(colorLocation);
+   //operate shader
+
+   m_program.setAttributeBuffer("qt_Vertex",GL_FLOAT,0,3,5*sizeof(GLfloat));
+   m_program.enableAttributeArray("qt_Vertex");
+
+   m_program.setAttributeBuffer("qt_Coord",GL_FLOAT,3*sizeof(GLfloat),2,5*sizeof(GLfloat));
+   m_program.enableAttributeArray("qt_Coord");
 
    //after operate we should enable attribute
    m_vao.release();
@@ -66,9 +77,12 @@ void openGLWidget::paintGL()
     glClearColor(0.5f,0.2f,0.8f,1.0f);
     glClear(GL_COLOR_BUFFER_BIT);
 
+    m_texture.bind(GL_TEXTURE0);
+    m_program.setAttributeValue("qt_Coord",GL_TEXTURE0);
+
     m_program.bind();
     m_vao.bind();
-    glDrawArrays(GL_TRIANGLES,0,3);
+    glDrawArrays(GL_QUADS,0,4);
     m_program.release();
     m_vao.release();
 
